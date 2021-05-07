@@ -25,7 +25,7 @@ const SignupForm = () => {
             event.preventDefault();
             event.stopPropagation();
         }
-// Refactored to work mutation
+// Refactored to work with mutation
         try {
             const { data } = await createUser({
                 variables: { ...userFormData }
@@ -67,10 +67,10 @@ const SignupForm = () => {
                 </Form.Group>
 
                 <Form.Group>
-                    <Form.Label htmlFor="email">E-mail</Form.Label>
+                    <Form.Label htmlFor="email">E-mail: </Form.Label>
                     <Form.Control
                         type="email"
-                        placeholder="Your email address"
+                        placeholder="Your e-mail address"
                         name="email"
                         onChange={handleInputChange}
                         value={userFormData.email}
@@ -80,7 +80,7 @@ const SignupForm = () => {
                 </Form.Group>
 
                 <Form.Group>
-                    <Form.Label htmlFor="password">Password</Form.Label>
+                    <Form.Label htmlFor="password">Password: </Form.Label>
                     <Form.Control
                         type="password"
                         placeholder="Your password"
