@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 
-const secret = "mytop secretsecretsshhhhh";
+const secret = "mytopsecretsecretphrase";
 const expiration = "2h";
 
 module.exports = {
@@ -20,7 +20,7 @@ module.exports = {
             req.user = data;
         }
         catch {
-            console.log("Invalid token");
+            console.log("Token invalid");
         }
 
         return req;
