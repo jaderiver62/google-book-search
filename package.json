@@ -18,6 +18,8 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "graphql": "^15.5.0",
+        "graphql-tag": "^2.12.4",
         "if-env": "^1.0.4"
     },
     "devDependencies": {
