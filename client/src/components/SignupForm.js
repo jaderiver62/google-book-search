@@ -1,17 +1,15 @@
 import React, { useState } from "react";
-import { Form, Button, Alert } from "react-bootstrap";
+
 import { useMutation } from "@apollo/react-hooks";
 import { ADD_USER } from "../utils/mutations";
+
+import { Form, Button, Alert } from "react-bootstrap";
 import Auth from "../utils/auth";
 
 const SignupForm = () => {
-    // set initial form state
     const [userFormData, setUserFormData] = useState({ username: "", email: "", password: "" });
-    // set state for form validation
     const [validated] = useState(false);
-    // set state for alert
     const [showAlert, setShowAlert] = useState(false);
-    // setup SAVE_BOOK mutate function
     const [createUser] = useMutation(ADD_USER);
 
     const handleInputChange = (event) => {
@@ -22,7 +20,6 @@ const SignupForm = () => {
     const handleFormSubmit = async (event) => {
         event.preventDefault();
 
-        // check if form has everything (as per react-bootstrap docs)
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
             event.preventDefault();
@@ -53,7 +50,7 @@ const SignupForm = () => {
             <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
                 {/* show alert if server response is bad */}
                 <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant="danger">
-                    Something went wrong with your signup!
+                    There was an error with your signup!
                 </Alert>
 
                 <Form.Group>
@@ -66,11 +63,11 @@ const SignupForm = () => {
                         value={userFormData.username}
                         required
                     />
-                    <Form.Control.Feedback type="invalid">Username is required!</Form.Control.Feedback>
+                    <Form.Control.Feedback type="invalid">Please enter username</Form.Control.Feedback>
                 </Form.Group>
 
                 <Form.Group>
-                    <Form.Label htmlFor="email">Email</Form.Label>
+                    <Form.Label htmlFor="email">E-mail</Form.Label>
                     <Form.Control
                         type="email"
                         placeholder="Your email address"
@@ -79,7 +76,7 @@ const SignupForm = () => {
                         value={userFormData.email}
                         required
                     />
-                    <Form.Control.Feedback type="invalid">Email is required!</Form.Control.Feedback>
+                    <Form.Control.Feedback type="invalid">Please enter e-mail</Form.Control.Feedback>
                 </Form.Group>
 
                 <Form.Group>
@@ -92,7 +89,7 @@ const SignupForm = () => {
                         value={userFormData.password}
                         required
                     />
-                    <Form.Control.Feedback type="invalid">Password is required!</Form.Control.Feedback>
+                    <Form.Control.Feedback type="invalid">Please enter password</Form.Control.Feedback>
                 </Form.Group>
                 <Button
                     disabled={!(userFormData.username && userFormData.email && userFormData.password)}
