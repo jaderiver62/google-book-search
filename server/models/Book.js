@@ -6,6 +6,7 @@ const bookSchema = new Schema({
     }, ],
     description: {
         type: String,
+        // Removed required
     },
     bookId: {
         type: String,
