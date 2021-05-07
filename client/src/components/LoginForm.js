@@ -11,7 +11,7 @@ const LoginForm = () => {
     const [validated] = useState(false);
     const [showAlert, setShowAlert] = useState(false);
     const [loginUser] = useMutation(LOGIN_USER);
-
+// Added login user mutation
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setUserFormData({ ...userFormData, [name]: value });
@@ -25,7 +25,7 @@ const LoginForm = () => {
             event.preventDefault();
             event.stopPropagation();
         }
-
+// Refactored this section to work with mutation
         try {
             const { data } = await loginUser({
                 variables: { ...userFormData }

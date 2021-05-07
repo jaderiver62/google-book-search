@@ -1,7 +1,7 @@
 import React from "react";
-
+// Adding mutations and queries
 import { useQuery, useMutation } from "@apollo/react-hooks";
-
+// Linking our mutations and queries
 import { GET_ME } from "../utils/queries";
 import { REMOVE_BOOK } from "../utils/mutations";
 import { removeBookId } from "../utils/localStorage";
@@ -12,9 +12,9 @@ import { Jumbotron, Container, CardColumns, Card, Button } from "react-bootstrap
 const SavedBooks = () => {
     const { loading, data } = useQuery(GET_ME);
     const [deleteBook] = useMutation(REMOVE_BOOK);
-
+// Adding delete mutation
     let userData = data?.me || {};
-
+// Deletes from the database using mongo _id value
     const handleDeleteBook = async (bookId) => {
         try {
             const { data } = await deleteBook({
@@ -27,7 +27,7 @@ const SavedBooks = () => {
             console.error(err);
         }
     };
-
+  // if data isn't here yet, say so
     if (loading) {
         return <h2>Loading...</h2>;
     }

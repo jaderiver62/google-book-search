@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
-
+// Using mutations
 import { useMutation } from "@apollo/react-hooks";
-import Auth from "../utils/auth";
+
 import { SAVE_BOOK } from "../utils/mutations";
 import { searchGoogleBooks } from "../utils/API";
 import { saveBookIds, getSavedBookIds } from "../utils/localStorage";
 
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from "react-bootstrap";
+import Auth from "../utils/auth";
 
 const SearchBooks = () => {
     const [searchedBooks, setSearchedBooks] = useState([]);
     const [searchInput, setSearchInput] = useState("");
-
     const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
 
     useEffect(() => {

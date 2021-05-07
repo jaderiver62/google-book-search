@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+// using mutations
 import { useMutation } from "@apollo/react-hooks";
 import { ADD_USER } from "../utils/mutations";
 
@@ -11,7 +11,7 @@ const SignupForm = () => {
     const [validated] = useState(false);
     const [showAlert, setShowAlert] = useState(false);
     const [createUser] = useMutation(ADD_USER);
-
+// New user mutation
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setUserFormData({ ...userFormData, [name]: value });
@@ -25,7 +25,7 @@ const SignupForm = () => {
             event.preventDefault();
             event.stopPropagation();
         }
-
+// Refactored to work mutation
         try {
             const { data } = await createUser({
                 variables: { ...userFormData }
