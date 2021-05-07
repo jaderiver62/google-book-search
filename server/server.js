@@ -28,8 +28,13 @@ app.use(express.urlencoded({
 }));
 app.use(express.json());
 
+<<<<<<< HEAD
 if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "../client/build")));
+=======
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../client/build')));
+>>>>>>> 9a7dc7f2d5181271d89440527be295a3f0d4c533
 }
 
 db.once("open", () => {
