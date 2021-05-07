@@ -14,7 +14,7 @@ const SavedBooks = () => {
     const [deleteBook] = useMutation(REMOVE_BOOK);
 // Adding delete mutation
     let userData = data?.me || {};
-// Deletes from the database using mongo _id value
+// Deletes from the database using _id value
     const handleDeleteBook = async (bookId) => {
         try {
             const { data } = await deleteBook({
