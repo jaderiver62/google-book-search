@@ -6,6 +6,7 @@ const bookSchema = new Schema({
     }, ],
     description: {
         type: String,
+// Not required
     },
     bookId: {
         type: String,
