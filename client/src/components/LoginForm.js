@@ -10,7 +10,7 @@ const LoginForm = () => {
     const [userFormData, setUserFormData] = useState({ email: "", password: "" });
     const [validated] = useState(false);
     const [showAlert, setShowAlert] = useState(false);
-    const [loginUser] = useMutation(LOGIN_USER);
+    const [loginUser ] = useMutation(LOGIN_USER);
 // Added login user mutation
     const handleInputChange = (event) => {
         const { name, value } = event.target;
