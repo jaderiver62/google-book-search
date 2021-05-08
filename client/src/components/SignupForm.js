@@ -10,7 +10,7 @@ const SignupForm = () => {
     const [userFormData, setUserFormData] = useState({ username: "", email: "", password: "" });
     const [validated] = useState(false);
     const [showAlert, setShowAlert] = useState(false);
-    const [createUser] = useMutation(ADD_USER);
+    const [newUser] = useMutation(ADD_USER);
 // New user mutation
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -27,7 +27,7 @@ const SignupForm = () => {
         }
 // Refactored to work with mutation
         try {
-            const { data } = await createUser({
+            const { data } = await newUser({
                 variables: { ...userFormData }
             });
             
