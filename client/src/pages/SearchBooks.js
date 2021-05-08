@@ -17,7 +17,7 @@ const SearchBooks = () => {
     useEffect(() => {
         return () => saveBookIds(savedBookIds);
     });
-
+// Using mutation to save a book in a user's data
     const [saveBook] = useMutation(SAVE_BOOK);
 
     const handleFormSubmit = async (event) => {
@@ -50,7 +50,7 @@ const SearchBooks = () => {
             console.error(err);
         }
     };
-
+// Saves a book's id in a user's data
     const handleSaveBook = async (bookId) => {
         const bookToSave = searchedBooks.find((book) => book.bookId === bookId);
 
