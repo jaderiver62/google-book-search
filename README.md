@@ -9,7 +9,7 @@ This search site accesses the Google Books API.  Users can add or delete books f
 
 This application can be used via the website, or the repo can be cloned for use offline.  This requires having Node, npm and MongoDB installed first.
 
-Once the repo is cloned and, naviagete to the folder in the command line and run 
+Once the repo is cloned, naviagete to the folder in the command line and run 
 
 `$ npm install`
 
